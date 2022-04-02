@@ -14,6 +14,10 @@ var _velocity: = Vector2.ZERO
 var _item: = "none"
 
 
+func _process(delta):
+	Engine.setItem(_item)
+
+
 func _physics_process(delta: float) -> void:
 	
 	# Applique la gravité
@@ -72,8 +76,18 @@ func setItem(item: String) -> bool:
 	if _item == "none":
 		print("Player : item received " + item)
 		_item = item
-		Engine.setItem(item)
 		return true
 	else:
 		print("Player : can not received " + item)
 		return false
+
+
+func getItem() -> String:
+	
+	if _item != "none":
+		var r_item = _item
+		_item = "none"
+		return r_item
+		
+	else:
+		return "none"
