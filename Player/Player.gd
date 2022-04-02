@@ -30,6 +30,18 @@ func _physics_process(delta: float) -> void:
 	# Récupère la direction demandé par le joueur
 	var direction: = get_direction()
 	
+	if direction.x < 0:
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("walk")
+	elif direction.x > 0:
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("walk")
+	elif Input.is_action_just_pressed("ui_accept"):
+		$AnimatedSprite.play("hit")
+		yield($AnimatedSprite, "animation_finished")
+	else:
+		$AnimatedSprite.play("stand")
+	
 	# Calcul la nouvelle vitesse
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
