@@ -16,7 +16,7 @@ var _power: = 0
 
 
 func _process(delta):
-	Engine.setItem(_item)
+	pass
 
 
 func _physics_process(delta: float) -> void:

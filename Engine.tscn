@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Engine.gd" type="Script" id=1]
 [ext_resource path="res://Font/No Virus.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
 font_data = ExtResource( 2 )
 
 [node name="Engine" type="Node"]
@@ -34,10 +38,14 @@ margin_bottom = 29.0
 custom_fonts/font = SubResource( 1 )
 text = "Temperature"
 
-[node name="Item" type="Label" parent="CanvasLayer/HUD/Control/VBoxContainer"]
+[node name="Score" type="Label" parent="CanvasLayer/HUD/Control/VBoxContainer"]
 margin_top = 33.0
 margin_right = 1006.0
-margin_bottom = 47.0
-text = "Item"
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
+text = "Score 0"
+
+[node name="TimerScore" type="Timer" parent="."]
 
 [connection signal="timeout" from="CanvasLayer/HUD/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerScore" to="." method="_on_TimerScore_timeout"]

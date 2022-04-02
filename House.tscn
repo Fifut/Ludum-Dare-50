@@ -59,6 +59,7 @@ position = Vector2( 512, 296 )
 shape = SubResource( 3 )
 
 [node name="Window" type="Node2D" parent="."]
+position = Vector2( 0, -48 )
 
 [node name="ColorRect" type="ColorRect" parent="Window"]
 margin_left = 128.0

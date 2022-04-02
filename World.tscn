@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Pickable/Tree.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Pickable/Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Pickable/Table.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pickable/Chaire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Pickable/Book.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Baby.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512, 8 )
@@ -34,10 +36,10 @@ color = Color( 0.94902, 0.94902, 0.94902, 1 )
 position = Vector2( 1536, 296 )
 shape = SubResource( 1 )
 
-[node name="Snow" type="Node" parent="."]
+[node name="Snow" type="Node2D" parent="."]
 
 [node name="Snow1" type="CPUParticles2D" parent="Snow"]
-position = Vector2( -112, -128 )
+position = Vector2( -112, -120 )
 amount = 100
 lifetime = 15.0
 emission_shape = 1
@@ -84,7 +86,7 @@ emission_shape = 1
 emission_sphere_radius = 100.0
 gravity = Vector2( 0, 5 )
 
-[node name="Tree" type="Node" parent="."]
+[node name="Tree" type="Node2D" parent="."]
 
 [node name="Tree1" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 1240, 208 )
@@ -102,7 +104,11 @@ collision_layer = 1
 
 [node name="Door" parent="House" instance=ExtResource( 5 )]
 position = Vector2( 1024, 288 )
+collision_layer = 5
 name_ = "Door"
+
+[node name="Baby" parent="." instance=ExtResource( 9 )]
+position = Vector2( 560, 248 )
 
 [node name="Furnace" parent="." instance=ExtResource( 4 )]
 position = Vector2( 696, 288 )
@@ -123,5 +129,11 @@ name_ = "Table"
 power = 20
 health = 10
 
+[node name="Book" parent="." instance=ExtResource( 8 )]
+position = Vector2( 864, 208 )
+name_ = "Book"
+power = 20
+health = 10
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 488, 240 )
+position = Vector2( 776, 240 )

@@ -2,31 +2,34 @@ extends Node
 
 
 signal start_game
+signal end_game
 
 
-# Declare member variables here. Examples:
-var _temperature
-var _item = ""
-var _fire_status: = true
-var _score = 0
-
+var _temperature:= 0
+var _fire_status:= true
+var _score:= 0
 
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	_temperature = 20
+	$CanvasLayer/HUD/Control/VBoxContainer/Temperature.visible = false
+	$CanvasLayer/HUD/Control/VBoxContainer/Score.visible = false
+	connect("start_game", self, "_startGame" )
+	connect("end_game", self, "_endGame" )
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$CanvasLayer/HUD/Control/VBoxContainer/Temperature.text = "Temperature " + str(_temperature)
-	$CanvasLayer/HUD/Control/VBoxContainer/Item.text = "Item  " + str(_item)
+	$CanvasLayer/HUD/Control/VBoxContainer/Score.text = "Score  " + str(_score)
+	
 
-
-
-func setItem(name: String):
-	_item = name
+	if _temperature < 15:
+		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.modulate = "#ff0000"
+	elif _temperature < 20:
+		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.modulate = "#0000ff"
+	elif _temperature >= 20:
+		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.modulate = "#00ff00"
 
 
 
@@ -41,6 +44,28 @@ func setFire(status: bool):
 		_fire_status = false
 
 
+func getScore():
+	return _score
+
+
+func getTemperature():
+	return _temperature
+	
+
+func _startGame():
+		_temperature = 20
+		_score = 0
+		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.visible = true
+		$CanvasLayer/HUD/Control/VBoxContainer/Score.visible = true
+		$TimerScore.start()
+
+
+func _endGame():
+		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.visible = false
+		$CanvasLayer/HUD/Control/VBoxContainer/Score.visible = false
+		$TimerScore.stop()
+
+
 
 func _on_Timer_timeout():
 	
@@ -52,5 +77,6 @@ func _on_Timer_timeout():
 		_temperature -= 1
 
 
-func getScore():
-	return _score
+func _on_TimerScore_timeout():
+	_score += 1
+

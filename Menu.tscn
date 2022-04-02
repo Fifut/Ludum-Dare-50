@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Font/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
+[ext_resource path="res://Font/No Virus.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="Theme" id=1]
 
@@ -26,6 +27,10 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 3 )
+
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -41,23 +46,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 339.0
-margin_top = 54.0
-margin_right = 685.0
-margin_bottom = 245.0
+margin_left = 271.0
+margin_top = 28.0
+margin_right = 753.0
+margin_bottom = 272.0
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 346.0
-margin_bottom = 61.0
+margin_right = 482.0
+margin_bottom = 105.0
 theme = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Keep It Warm"
+text = "Delay the inevitable
+Keep your house warm"
+align = 1
 
 [node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 65.0
-margin_right = 346.0
-margin_bottom = 126.0
+margin_top = 109.0
+margin_right = 482.0
+margin_bottom = 160.0
 custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
 custom_colors/font_color_hover = Color( 0.145098, 0.733333, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
@@ -67,11 +74,20 @@ custom_styles/normal = SubResource( 2 )
 text = "Start"
 
 [node name="Score" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 130.0
-margin_right = 346.0
-margin_bottom = 191.0
+margin_top = 164.0
+margin_right = 482.0
+margin_bottom = 215.0
 custom_fonts/font = ExtResource( 1 )
 text = "Score : 0"
+align = 1
+
+[node name="Key" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 219.0
+margin_right = 482.0
+margin_bottom = 244.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Arrow keys to move, space to interact"
 align = 1
 
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Start" to="." method="_on_Start_button_up"]

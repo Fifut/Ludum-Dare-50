@@ -59,7 +59,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-modulate = Color( 0.8125, 0.8125, 1, 1 )
+modulate = Color( 0.811765, 0.811765, 1, 1 )
 collision_mask = 2
 script = ExtResource( 1 )
 

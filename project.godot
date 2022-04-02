@@ -10,7 +10,9 @@ config_version=4
 
 [application]
 
-config/name="Keep Warm"
+config/name="Keep It Warm"
+config/description="Delay the inevitable!
+Keep your house warm."
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
