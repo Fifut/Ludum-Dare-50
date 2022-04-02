@@ -20,8 +20,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$HUD/Control/VBoxContainer/Temperature.text = "Temperature " + str(_temperature)
-	$HUD/Control/VBoxContainer/Item.text = "Item  " + str(_item)
+	$CanvasLayer/HUD/Control/VBoxContainer/Temperature.text = "Temperature " + str(_temperature)
+	$CanvasLayer/HUD/Control/VBoxContainer/Item.text = "Item  " + str(_item)
 
 
 
@@ -32,12 +32,12 @@ func setItem(name: String):
 
 func setFire(status: bool):
 	if status:
-		$HUD/Timer.stop()
-		$HUD/Timer.start()
+		$CanvasLayer/HUD/Timer.stop()
+		$CanvasLayer/HUD/Timer.start()
 		_fire_status = true
 	else:
-		$HUD/Timer.stop()
-		$HUD/Timer.start()
+		$CanvasLayer/HUD/Timer.stop()
+		$CanvasLayer/HUD/Timer.start()
 		_fire_status = false
 
 
@@ -45,8 +45,10 @@ func setFire(status: bool):
 func _on_Timer_timeout():
 	
 	if _fire_status and _temperature < 25:
+		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.modulate = "#00ff00"
 		_temperature += 1
 	elif not _fire_status:
+		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.modulate = "#ff0000"
 		_temperature -= 1
 
 
