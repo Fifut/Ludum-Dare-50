@@ -8,8 +8,10 @@ export var speed: = Vector2(200.0, 200.0)
 export var gravity: = 1000.0
 
 
+
 # Variable privée
 var _velocity: = Vector2.ZERO
+var _item: = "none"
 
 
 func _physics_process(delta: float) -> void:
@@ -64,3 +66,10 @@ func calculate_move_velocity(actual_velocity: Vector2, direction: Vector2, speed
 		out.y = 0.0
 		
 	return out
+
+
+func setItem(item: String):
+	print("Player : item received " + item)
+	_item = item
+	Engine.setItem(item)
+	

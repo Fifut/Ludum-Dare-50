@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Pickable/Table.tscn" type="PackedScene" id=2]
 [ext_resource path="res://House.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Furnace.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Engine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Pickable/Chaire.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node2D"]
+
+[node name="Engine" parent="." instance=ExtResource( 5 )]
 
 [node name="Floor" type="ColorRect" parent="."]
 margin_top = 560.0
@@ -14,24 +18,11 @@ color = Color( 0.0823529, 0.65098, 0, 1 )
 
 [node name="House" parent="." instance=ExtResource( 3 )]
 
-[node name="Furnace" type="Node2D" parent="."]
-
-[node name="Main" type="ColorRect" parent="Furnace"]
-margin_left = 384.0
-margin_top = 512.0
-margin_right = 416.0
-margin_bottom = 560.0
-color = Color( 0.227451, 0.227451, 0.227451, 1 )
-
-[node name="ColorRect" type="ColorRect" parent="Furnace"]
-margin_left = 400.0
-margin_top = 288.0
-margin_right = 408.0
-margin_bottom = 512.0
-color = Color( 0.137255, 0.137255, 0.137255, 1 )
-
-[node name="Table" parent="." instance=ExtResource( 2 )]
-position = Vector2( 192, 560 )
+[node name="Furnace" parent="." instance=ExtResource( 4 )]
+position = Vector2( 432, 560 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 288, 552 )
+
+[node name="Chaire" parent="." instance=ExtResource( 7 )]
+position = Vector2( 192, 552 )

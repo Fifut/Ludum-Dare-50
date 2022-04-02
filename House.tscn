@@ -12,6 +12,7 @@ extents = Vector2( 512, 4 )
 [node name="House" type="Node2D"]
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 margin_left = 72.0
 margin_top = 384.0
 margin_right = 504.0
