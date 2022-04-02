@@ -24,7 +24,7 @@ func _process(delta):
 	$CanvasLayer/HUD/Control/VBoxContainer/Score.text = "Score  " + str(_score)
 	
 
-	if _temperature < 15:
+	if _temperature < 17:
 		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.modulate = "#ff0000"
 	elif _temperature < 20:
 		$CanvasLayer/HUD/Control/VBoxContainer/Temperature.modulate = "#0000ff"

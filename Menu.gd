@@ -3,7 +3,7 @@ extends Control
 
 
 func _process(delta):
-	$CenterContainer/VBoxContainer/Score.text = "Score " + str(Engine.getScore() )
+	$Score.text = "Score " + str(Engine.getScore() )
 
 
 

@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 
-	if Engine.getTemperature() < 15 and not _cold:
+	if Engine.getTemperature() < 17 and not _cold:
 		_cold = true
 		$Label.visible = true
 		$Timer.start()
@@ -20,15 +20,9 @@ func _process(delta):
 		Engine.emit_signal("end_game")
 	
 	
-	if _body != null and Input.is_action_pressed("ui_accept") and _cold:
+	if _body != null and Input.is_action_just_pressed("ui_accept"):
 		$AnimatedSprite.play()
-		
-		if Engine.getTemperature() >= 15:
-			_cold = false
-			$Timer.stop()
-	else:
-		$AnimatedSprite.stop()
-
+		$AudioStreamPlayer2.play()
 
 
 func _on_Timer_timeout():
@@ -43,3 +37,12 @@ func _on_body_entered(body):
 
 func _on_Baby_body_exited(body):
 	_body = null
+
+
+func _on_AnimatedSprite_animation_finished():
+	$AnimatedSprite.stop()
+	
+	if Engine.getTemperature() >= 15:
+		_cold = false
+		$Label.visible = false
+		$Timer.stop()

@@ -57,10 +57,10 @@ func get_direction() -> Vector2:
 	out.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	
 	# Saut
-	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
-		out.y = -Input.get_action_strength("ui_up")
-	else:
-		out.y = 0.0
+	#if is_on_floor() and Input.is_action_just_pressed("ui_up"):
+	#	out.y = -Input.get_action_strength("ui_up")
+	#else:
+	#	out.y = 0.0
 	
 	return out
 

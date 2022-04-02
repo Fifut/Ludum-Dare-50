@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Pickable/Tree.tscn" type="PackedScene" id=2]
@@ -11,35 +11,32 @@
 [ext_resource path="res://Baby.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512, 8 )
+extents = Vector2( 2528, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.5, 80 )
 
 [node name="World" type="Node2D"]
 
 [node name="Sky" type="ColorRect" parent="."]
-margin_left = -736.0
-margin_top = -64.0
-margin_right = 2752.0
-margin_bottom = 384.0
+margin_left = -512.0
+margin_top = -176.0
+margin_right = 6592.0
+margin_bottom = 288.0
 color = Color( 0, 0, 0, 1 )
-
-[node name="Outside" type="StaticBody2D" parent="."]
-collision_layer = 16
-
-[node name="Floor" type="ColorRect" parent="Outside"]
-margin_left = -472.0
-margin_top = 288.0
-margin_right = 2048.0
-margin_bottom = 304.0
-color = Color( 0.94902, 0.94902, 0.94902, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside"]
-position = Vector2( 1536, 296 )
-shape = SubResource( 1 )
 
 [node name="Snow" type="Node2D" parent="."]
 
 [node name="Snow1" type="CPUParticles2D" parent="Snow"]
-position = Vector2( -112, -120 )
+position = Vector2( -128, -232 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow26" type="CPUParticles2D" parent="Snow"]
+position = Vector2( -344, -232 )
 amount = 100
 lifetime = 15.0
 emission_shape = 1
@@ -47,7 +44,7 @@ emission_sphere_radius = 100.0
 gravity = Vector2( 0, 5 )
 
 [node name="Snow2" type="CPUParticles2D" parent="Snow"]
-position = Vector2( 1152, -128 )
+position = Vector2( 1152, -280 )
 amount = 100
 lifetime = 15.0
 emission_shape = 1
@@ -55,7 +52,7 @@ emission_sphere_radius = 100.0
 gravity = Vector2( 0, 5 )
 
 [node name="Snow3" type="CPUParticles2D" parent="Snow"]
-position = Vector2( 1408, -128 )
+position = Vector2( 1408, -280 )
 amount = 100
 lifetime = 15.0
 emission_shape = 1
@@ -63,7 +60,47 @@ emission_sphere_radius = 100.0
 gravity = Vector2( 0, 5 )
 
 [node name="Snow4" type="CPUParticles2D" parent="Snow"]
-position = Vector2( 1600, -128 )
+position = Vector2( 1600, -280 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow27" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 456, -344 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow28" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 712, -344 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow30" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 56, -352 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow31" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 296, -352 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow29" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 904, -344 )
 amount = 100
 lifetime = 15.0
 emission_shape = 1
@@ -71,7 +108,7 @@ emission_sphere_radius = 100.0
 gravity = Vector2( 0, 5 )
 
 [node name="Snow5" type="CPUParticles2D" parent="Snow"]
-position = Vector2( 1856, -128 )
+position = Vector2( 1856, -280 )
 amount = 100
 lifetime = 15.0
 emission_shape = 1
@@ -79,26 +116,182 @@ emission_sphere_radius = 100.0
 gravity = Vector2( 0, 5 )
 
 [node name="Snow6" type="CPUParticles2D" parent="Snow"]
-position = Vector2( 2048, -128 )
+position = Vector2( 2048, -280 )
 amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
 gravity = Vector2( 0, 5 )
 
-[node name="Tree" type="Node2D" parent="."]
+[node name="Snow7" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 2248, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
 
-[node name="Tree1" parent="Tree" instance=ExtResource( 2 )]
-position = Vector2( 1240, 208 )
-collision_layer = 1
+[node name="Snow8" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 2504, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
 
-[node name="Tree2" parent="Tree" instance=ExtResource( 2 )]
-position = Vector2( 1472, 208 )
-collision_layer = 1
+[node name="Snow9" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 2696, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
 
-[node name="Tree3" parent="Tree" instance=ExtResource( 2 )]
-position = Vector2( 1728, 208 )
-collision_layer = 1
+[node name="Snow10" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 2952, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow11" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 3144, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow12" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 3344, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow13" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 3600, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow14" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 3792, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow15" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 4048, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow16" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 4240, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow17" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 4440, -264 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow18" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 4696, -264 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow19" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 4888, -264 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow20" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 5144, -264 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow21" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 5336, -264 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow22" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 5544, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow23" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 5736, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow24" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 5992, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Snow25" type="CPUParticles2D" parent="Snow"]
+position = Vector2( 6184, -272 )
+amount = 100
+lifetime = 15.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+gravity = Vector2( 0, 5 )
+
+[node name="Outside" type="StaticBody2D" parent="."]
+collision_layer = 16
+
+[node name="Floor" type="ColorRect" parent="Outside"]
+margin_left = -512.0
+margin_top = 288.0
+margin_right = 6592.0
+margin_bottom = 472.0
+color = Color( 0.203922, 0.203922, 0.203922, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside"]
+position = Vector2( 3552, 296 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Outside"]
+position = Vector2( 6071.5, 208 )
+shape = SubResource( 2 )
 
 [node name="House" parent="." instance=ExtResource( 3 )]
 
@@ -111,7 +304,109 @@ name_ = "Door"
 position = Vector2( 560, 248 )
 
 [node name="Furnace" parent="." instance=ExtResource( 4 )]
-position = Vector2( 696, 288 )
+position = Vector2( 760, 288 )
+
+[node name="Tree" type="Node2D" parent="."]
+
+[node name="Tree1" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 1240, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree2" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 1496, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree3" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 1688, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree4" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 1952, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree5" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 2208, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree6" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 2544, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree7" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 2648, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree8" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 2904, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree9" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 3240, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree10" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 3408, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree11" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 3664, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree12" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 3856, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree13" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 4120, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree14" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 4376, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree15" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 4712, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree16" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 4816, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree17" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 5072, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree18" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 5408, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree19" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 5656, 208 )
+collision_layer = 1
+power = 30
+
+[node name="Tree20" parent="Tree" instance=ExtResource( 2 )]
+position = Vector2( 5992, 208 )
+collision_layer = 1
+power = 30
 
 [node name="Chaire1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 320, 248 )
@@ -126,7 +421,7 @@ name_ = "Chair2"
 [node name="Table" parent="." instance=ExtResource( 6 )]
 position = Vector2( 200, 248 )
 name_ = "Table"
-power = 20
+power = 25
 health = 10
 
 [node name="Book" parent="." instance=ExtResource( 8 )]
@@ -136,4 +431,4 @@ power = 20
 health = 10
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 776, 240 )
+position = Vector2( 672, 248 )

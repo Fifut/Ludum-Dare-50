@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Font/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
 [ext_resource path="res://Font/No Virus.ttf" type="DynamicFontData" id=3]
-
-[sub_resource type="Theme" id=1]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.615686, 0, 0, 1 )
@@ -31,6 +29,12 @@ corner_radius_bottom_left = 25
 size = 24
 font_data = ExtResource( 3 )
 
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=6]
+size = 80
+font_data = ExtResource( 3 )
+
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -41,30 +45,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.513726, 0.513726, 0.513726, 1 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 271.0
-margin_top = 28.0
-margin_right = 753.0
-margin_bottom = 272.0
-
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 482.0
-margin_bottom = 105.0
-theme = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "Delay the inevitable
-Keep your house warm"
-align = 1
-
-[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 109.0
-margin_right = 482.0
-margin_bottom = 160.0
+[node name="Start" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -36.0
+margin_right = 240.0
+margin_bottom = 34.0
+grow_vertical = 2
+size_flags_horizontal = 3
 custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
 custom_colors/font_color_hover = Color( 0.145098, 0.733333, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
@@ -73,21 +64,40 @@ custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 2 )
 text = "Start"
 
-[node name="Score" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 164.0
-margin_right = 482.0
-margin_bottom = 215.0
+[node name="Score" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.0
+margin_top = 76.0
+margin_right = 87.0
+margin_bottom = 127.0
 custom_fonts/font = ExtResource( 1 )
 text = "Score : 0"
 align = 1
 
-[node name="Key" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 219.0
-margin_right = 482.0
-margin_bottom = 244.0
+[node name="Key" type="Label" parent="."]
+margin_left = 320.0
+margin_top = 504.0
+margin_right = 711.0
+margin_bottom = 529.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "Arrow keys to move, space to interact"
 align = 1
 
-[connection signal="button_up" from="CenterContainer/VBoxContainer/Start" to="." method="_on_Start_button_up"]
+[node name="Title" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -244.0
+margin_bottom = -79.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Delay the inevitable
+Keep your house warm"
+align = 1
+
+[connection signal="button_up" from="Start" to="." method="_on_Start_button_up"]

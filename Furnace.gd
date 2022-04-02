@@ -26,6 +26,7 @@ func _process(delta):
 		var item = _body.getItem()
 		
 		if item[0] != "none":
+			$AudioStreamPlayer.play()
 			print("Furnace : receive " + item[0])
 			var time = $Timer.get_time_left()
 			time += item[1]
