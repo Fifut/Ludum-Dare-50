@@ -8,7 +8,6 @@ extents = Vector2( 16, 28 )
 
 [node name="Chaire" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-item_name = "Chair"
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 8, -36 )
@@ -31,3 +30,9 @@ margin_top = -32.0
 margin_right = 24.0
 margin_bottom = -24.0
 color = Color( 0.376471, 0.176471, 0, 1 )
+
+[node name="Health" parent="." index="6"]
+margin_left = -8.0
+margin_top = -80.0
+margin_right = 24.0
+margin_bottom = -64.0

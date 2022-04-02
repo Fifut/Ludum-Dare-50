@@ -16,5 +16,11 @@ stream = ExtResource( 2 )
 volume_db = -5.0
 pitch_scale = 0.5
 
+[node name="Health" type="Label" parent="."]
+margin_top = -16.0
+margin_right = 32.0
+align = 1
+valign = 1
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

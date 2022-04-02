@@ -12,6 +12,7 @@ export var gravity: = 1000.0
 # Variable privée
 var _velocity: = Vector2.ZERO
 var _item: = "none"
+var _power: = 0
 
 
 func _process(delta):
@@ -70,24 +71,36 @@ func calculate_move_velocity(actual_velocity: Vector2, direction: Vector2, speed
 		out.y = 0.0
 		
 	return out
+	
+	
+	
+func isEmpty() -> bool:
+	if _item == "none":
+		return true
+	else:
+		return false
 
 
-func setItem(item: String) -> bool:
+
+func setItem(item: String, power: int) -> bool:
 	if _item == "none":
 		print("Player : item received " + item)
 		_item = item
+		_power = power
 		return true
 	else:
 		print("Player : can not received " + item)
 		return false
 
 
-func getItem() -> String:
+func getItem():
 	
 	if _item != "none":
 		var r_item = _item
+		var r_power = _power
 		_item = "none"
-		return r_item
+		_power = 0
+		return [r_item, r_power]
 		
 	else:
-		return "none"
+		return ["none", 0]

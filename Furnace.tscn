@@ -10,6 +10,8 @@ extents = Vector2( 16, 24 )
 script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 autostart = true
 
 [node name="Main" type="ColorRect" parent="."]
@@ -30,7 +32,15 @@ shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
-autoplay = true
+
+[node name="Time" type="Label" parent="."]
+margin_left = 16.0
+margin_top = -72.0
+margin_right = 64.0
+margin_bottom = -56.0
+text = "0"
+valign = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
