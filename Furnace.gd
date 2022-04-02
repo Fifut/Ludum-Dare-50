@@ -9,6 +9,8 @@ var _body = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AudioStreamPlayer2D.play()
+	$AnimationPlayer.set_current_animation("Fire burn")
+	
 
 
 
@@ -31,6 +33,7 @@ func _process(delta):
 			$Timer.start()
 			print("Furnace : time " + str(time))
 			Engine.setFire(true)
+			$AnimationPlayer.set_current_animation("Fire burn")
 			
 			if not $AudioStreamPlayer2D.is_playing():
 				$AudioStreamPlayer2D.play()
@@ -49,3 +52,4 @@ func _on_body_exited(body):
 func _on_Timer_timeout():
 	$AudioStreamPlayer2D.stop()
 	Engine.setFire(false)
+	$AnimationPlayer.set_current_animation("Stop")

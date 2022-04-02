@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fire.wav" type="AudioStream" id=1]
 [ext_resource path="res://Furnace.gd" type="Script" id=2]
@@ -6,29 +6,72 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 24 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "Fire burn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fire:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.92549, 0.705882, 0, 1 ), Color( 0.603922, 0.705882, 0, 1 ), Color( 0.705882, 0.431373, 0, 1 ), Color( 0.866667, 0.976471, 0.247059, 1 ), Color( 0.92549, 0.705882, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Stop"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fire:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.415686, 0.415686, 0.415686, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
 [node name="Furnace" type="Area2D"]
 script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -24 )
+shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 autostart = true
-
-[node name="Main" type="ColorRect" parent="."]
-margin_left = -16.0
-margin_top = -48.0
-margin_right = 16.0
-color = Color( 0.227451, 0.227451, 0.227451, 1 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_top = -272.0
-margin_right = 8.0
-margin_bottom = -48.0
-color = Color( 0.137255, 0.137255, 0.137255, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -24 )
-shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
@@ -40,6 +83,39 @@ margin_right = 64.0
 margin_bottom = -56.0
 text = "0"
 valign = 1
+
+[node name="Main" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = -48.0
+margin_right = 16.0
+color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+
+[node name="Pipe" type="ColorRect" parent="."]
+margin_top = -320.0
+margin_right = 8.0
+margin_bottom = -48.0
+color = Color( 0.137255, 0.137255, 0.137255, 1 )
+
+[node name="Fire" type="ColorRect" parent="."]
+margin_left = -8.0
+margin_top = -24.0
+margin_right = 8.0
+margin_bottom = -8.0
+color = Color( 0.92549, 0.705882, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+"anims/Fire burn" = SubResource( 2 )
+anims/Stop = SubResource( 3 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 0, -16 )
+amount = 12
+emission_shape = 1
+emission_sphere_radius = 5.0
+gravity = Vector2( 0, -20 )
+scale_amount = 3.0
+color = Color( 1, 0, 0, 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

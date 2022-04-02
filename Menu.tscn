@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Font/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Menu.gd" type="Script" id=2]
 
 [sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.615686, 0, 0, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.172549, 0.533333, 0, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.654902, 0.294118, 0.294118, 1 )
@@ -47,6 +61,8 @@ margin_bottom = 206.0
 custom_colors/font_color = Color( 0.12549, 1, 0, 1 )
 custom_colors/font_color_hover = Color( 0.145098, 0.733333, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 2 )
 text = "Start"
 
@@ -55,7 +71,7 @@ margin_top = 210.0
 margin_right = 575.0
 margin_bottom = 311.0
 custom_fonts/font = ExtResource( 1 )
-text = "Score : 1000"
+text = "Score : 0"
 align = 1
 
 [connection signal="button_up" from="CenterContainer/VBoxContainer/Start" to="." method="_on_Start_button_up"]

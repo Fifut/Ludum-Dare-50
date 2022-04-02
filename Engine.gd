@@ -1,10 +1,15 @@
 extends Node
 
 
+signal start_game
+
+
 # Declare member variables here. Examples:
 var _temperature
 var _item = ""
 var _fire_status: = true
+var _score = 0
+
 
 
 
@@ -15,8 +20,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Control/VBoxContainer/Temperature.text = "Temperature " + str(_temperature)
-	$Control/VBoxContainer/Item.text = "Item  " + str(_item)
+	$HUD/Control/VBoxContainer/Temperature.text = "Temperature " + str(_temperature)
+	$HUD/Control/VBoxContainer/Item.text = "Item  " + str(_item)
 
 
 
@@ -27,12 +32,12 @@ func setItem(name: String):
 
 func setFire(status: bool):
 	if status:
-		$Timer.stop()
-		$Timer.start()
+		$HUD/Timer.stop()
+		$HUD/Timer.start()
 		_fire_status = true
 	else:
-		$Timer.stop()
-		$Timer.start()
+		$HUD/Timer.stop()
+		$HUD/Timer.start()
 		_fire_status = false
 
 
@@ -43,3 +48,7 @@ func _on_Timer_timeout():
 		_temperature += 1
 	elif not _fire_status:
 		_temperature -= 1
+
+
+func getScore():
+	return _score
