@@ -68,8 +68,12 @@ func calculate_move_velocity(actual_velocity: Vector2, direction: Vector2, speed
 	return out
 
 
-func setItem(item: String):
-	print("Player : item received " + item)
-	_item = item
-	Engine.setItem(item)
-	
+func setItem(item: String) -> bool:
+	if _item == "none":
+		print("Player : item received " + item)
+		_item = item
+		Engine.setItem(item)
+		return true
+	else:
+		print("Player : can not received " + item)
+		return false
