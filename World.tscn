@@ -22,7 +22,11 @@ color = Color( 0.0823529, 0.65098, 0, 1 )
 position = Vector2( 432, 560 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 288, 552 )
+position = Vector2( 480, 552 )
 
 [node name="Chaire" parent="." instance=ExtResource( 7 )]
-position = Vector2( 192, 552 )
+position = Vector2( 296, 560 )
+
+[node name="Chaire2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 248, 560 )
+scale = Vector2( -1, 1 )

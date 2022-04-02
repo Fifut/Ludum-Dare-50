@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/put_fire.wav-7dbc5cff142102e5c01f3a9252c4853a.sample"
+
+[deps]
+
+source_file="res://Pickable/put_fire.wav"
+dest_files=[ "res://.import/put_fire.wav-7dbc5cff142102e5c01f3a9252c4853a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

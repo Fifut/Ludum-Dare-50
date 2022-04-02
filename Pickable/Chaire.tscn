@@ -4,17 +4,30 @@
 [ext_resource path="res://Pickable/Chaire.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 12 )
+extents = Vector2( 16, 28 )
 
 [node name="Chaire" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 item_name = "Chair"
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2( -4, -12 )
+position = Vector2( 8, -36 )
 shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="." index="2"]
 margin_left = -8.0
 margin_top = -24.0
+color = Color( 0.376471, 0.176471, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="." index="3"]
+margin_left = 16.0
+margin_top = -64.0
+margin_right = 24.0
+color = Color( 0.376471, 0.176471, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="." index="4"]
+margin_left = -8.0
+margin_top = -32.0
+margin_right = 24.0
+margin_bottom = -24.0
 color = Color( 0.376471, 0.176471, 0, 1 )
