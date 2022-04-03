@@ -5,7 +5,7 @@ signal start_game
 signal end_game
 
 
-onready var Score = $CanvasLayer/Control/VBoxContainer/Score
+onready var Score = $CanvasLayer/Control/VBoxContainer/HBoxContainer/Score
 
 
 var _score:= 0

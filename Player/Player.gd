@@ -8,9 +8,19 @@ export var speed: = Vector2(200.0, 200.0)
 export var gravity: = 1000.0
 
 
+onready var Inventory = $CanvasLayer/Control/VBoxContainer/Inventory
+
+
 var _velocity: = Vector2.ZERO
 var _item: = "none"
 var _power: = 0
+
+
+func _process(delta):
+	if _item != "none":
+		Inventory.text = "Inventory : " + _item
+	else:
+		Inventory.text = ""
 
 
 func _physics_process(delta: float) -> void:
