@@ -1,47 +1,56 @@
 extends Area2D
 
 
-var _body = null
-
 export var name_ = "none"
 export var power = 10
 export var health = 5
 
 
+onready var ProgressBar 		= $ProgressBar
+onready var AnimationPlayer		= $AnimationPlayer
+onready var AudioStreamPlayer	= $AudioStreamPlayer
+
+
+var _body = null
+
+
 func _ready():
-	$Health.visible = false
+	ProgressBar.visible = false
+	ProgressBar.max_value = health
 
 
 func _process(delta):
 	
-	# Si player présent et touche entrer
+	# If player interact with object
 	if _body != null and Input.is_action_just_pressed("ui_accept"):
 		
-		# Si inventaire joueur vide
+		# If player inventory empty
 		if _body.isEmpty():
 			
-			# Vie objet -1
+			# Object health -1
 			health -= 1
-			$Health.visible = true
-			$Health.text = str(health)
-			print("Pickable " + name_ + ": health " + str(health) )
 			
-			# Son "hurt"
-			$AudioStreamPlayer.play()
-			yield($AudioStreamPlayer, "finished")
+			# Show progessbar and set value
+			ProgressBar.visible = true
+			ProgressBar.value = health
+			
+			# Play "hurt" sound and anim
+			AudioStreamPlayer.stop()
+			AnimationPlayer.stop()
+			
+			AnimationPlayer.play("Hit")
+			AudioStreamPlayer.play()
+			#yield(AudioStreamPlayer, "finished")
 
-			# Si vie objet = 0, donne au joueur
+			# If object health = 0, give object to player and delete it
 			if health < 1:
 				_body.setItem(name_, power)
-				print("Pickable " + name_ + ": picked")
 				queue_free()
 
 
-
 func _on_body_entered(body):
-	print("Pickable " + name_ + " body entered")
 	_body = body
 
+
 func _on_body_exited(body):
-	print("Pickable " + name_ + " body exited")
 	_body = null

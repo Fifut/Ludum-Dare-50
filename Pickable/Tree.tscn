@@ -6,19 +6,19 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 76 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 8, 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 16, 8, 16 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "idle",
+"name": "default",
 "speed": 3.0
 } ]
 
@@ -31,14 +31,14 @@ health = 20
 position = Vector2( 0, -4 )
 shape = SubResource( 1 )
 
-[node name="Health" parent="." index="3"]
-margin_left = 40.0
-margin_top = -88.0
-margin_right = 72.0
-margin_bottom = -63.0
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="4"]
-scale = Vector2( 10, 10 )
-frames = SubResource( 4 )
-animation = "idle"
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0, -9.53674e-07 )
+frames = SubResource( 7 )
+frame = 1
 playing = true
+
+[node name="ProgressBar" parent="." index="3"]
+margin_left = -4.0
+margin_top = -88.0
+margin_right = 44.0
+margin_bottom = -80.0

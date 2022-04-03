@@ -1,45 +1,49 @@
 extends Area2D
 
 
+onready var Timer 			= $Timer
+onready var AnimationPlayer	= $AnimationPlayer
+onready var AudioPut		= $AudioPut
+onready var AudioFire		= $AudioFire
+onready var ProgressBar		= $ProgressBar
+
 
 var _body = null
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$AudioStreamPlayer2D.play()
-	$AnimationPlayer.set_current_animation("Fire burn")
-	
-
+	AudioFire.play()
+	AnimationPlayer.set_current_animation("Fire burn")
 
 
 func _process(delta):
 	
-	
-	var time_left = round($Timer.get_time_left() )
-	$Time.text = str(time_left)
+	# Set progress bar value
+	ProgressBar.value = Timer.get_time_left()
 	
 
-	
+	# If player interact with furnace
 	if _body != null and Input.is_action_just_pressed("ui_accept"):
+		
+		# Get player items
 		var item = _body.getItem()
 		
+		# If items name is not null
 		if item[0] != "none":
-			$AudioStreamPlayer.play()
-			print("Furnace : receive " + item[0])
-			var time = $Timer.get_time_left()
-			time += item[1]
-			$Timer.set_wait_time(time)
-			$Timer.start()
-			print("Furnace : time " + str(time))
-			Engine.setFire(true)
-			$AnimationPlayer.set_current_animation("Fire burn")
 			
-			if not $AudioStreamPlayer2D.is_playing():
-				$AudioStreamPlayer2D.play()
-
-
+			# Add time to fire
+			var time = Timer.get_time_left()
+			time += item[1]
+			Timer.set_wait_time(time)
+			Timer.start()
+			
+			#Play put wood in fire sound and anim
+			AudioPut.play()
+			AnimationPlayer.set_current_animation("Fire burn")
+			
+			# Start fire sound if stoped
+			if not AudioFire.is_playing():
+				AudioFire.play()
 
 
 func _on_body_entered(body):
@@ -50,7 +54,7 @@ func _on_body_exited(body):
 	_body = null
 
 
+# Fire stop
 func _on_Timer_timeout():
-	$AudioStreamPlayer2D.stop()
-	Engine.setFire(false)
-	$AnimationPlayer.set_current_animation("Stop")
+	AudioFire.stop()
+	AnimationPlayer.set_current_animation("Stop")

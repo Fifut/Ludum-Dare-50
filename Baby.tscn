@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprite/Baby.png" type="Texture" id=1]
 [ext_resource path="res://baby.wav" type="AudioStream" id=2]
-[ext_resource path="res://Font/No Virus.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Baby.gd" type="Script" id=4]
 [ext_resource path="res://baby2.wav" type="AudioStream" id=5]
 
@@ -30,12 +29,20 @@ animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
-"speed": 4.0
+"speed": 8.0
 } ]
 
-[sub_resource type="DynamicFont" id=7]
-size = 50
-font_data = ExtResource( 3 )
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0, 0.74902, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0.435294, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.74902, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.431373, 0, 0, 1 )
 
 [node name="Baby" type="Area2D"]
 script = ExtResource( 4 )
@@ -50,26 +57,44 @@ position = Vector2( -4.76837e-07, 0 )
 scale = Vector2( 10, 10 )
 frames = SubResource( 6 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioCry" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="AudioRock" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = -8.0
-margin_top = -64.0
-margin_right = 40.0
-margin_bottom = -13.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "!"
-align = 1
-
-[node name="Timer" type="Timer" parent="."]
+[node name="TimerSound" type="Timer" parent="."]
 wait_time = 2.0
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="TimerRock" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="TimerEnd" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="ProgressBarGreen" type="ProgressBar" parent="."]
+margin_top = -48.0
+margin_right = 48.0
+margin_bottom = -40.0
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 11 )
+custom_styles/bg = SubResource( 12 )
+step = 1.0
+percent_visible = false
+
+[node name="ProgressBarRed" type="ProgressBar" parent="."]
+margin_top = -48.0
+margin_right = 48.0
+margin_bottom = -40.0
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 9 )
+custom_styles/bg = SubResource( 10 )
+step = 1.0
+percent_visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_Baby_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Baby_body_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerSound" to="." method="_on_TimerSound_timeout"]
+[connection signal="timeout" from="TimerRock" to="." method="_on_TimerRock_timeout"]
+[connection signal="timeout" from="TimerEnd" to="." method="_on_TimerEnd_timeout"]
