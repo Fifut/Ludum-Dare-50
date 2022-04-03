@@ -24,7 +24,7 @@ animations = [ {
 
 [node name="Tree" instance=ExtResource( 1 )]
 name_ = "Tree"
-power = 60
+power = 40
 health = 20
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -34,7 +34,6 @@ shape = SubResource( 1 )
 [node name="Sprite" parent="." index="1"]
 position = Vector2( 0, -9.53674e-07 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="ProgressBar" parent="." index="3"]

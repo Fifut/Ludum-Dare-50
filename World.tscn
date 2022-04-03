@@ -404,102 +404,82 @@ position = Vector2( 760, 288 )
 [node name="Tree1" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 1240, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree2" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 1496, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree3" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 1688, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree4" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 1952, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree5" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 2208, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree6" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 2544, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree7" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 2648, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree8" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 2904, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree9" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 3240, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree10" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 3408, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree11" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 3664, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree12" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 3856, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree13" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 4120, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree14" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 4376, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree15" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 4712, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree16" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 4816, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree17" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 5072, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree18" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 5408, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree19" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 5656, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Tree20" parent="Tree" instance=ExtResource( 2 )]
 position = Vector2( 5992, 208 )
 collision_layer = 1
-power = 30
 
 [node name="Chaire1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 320, 248 )
@@ -514,14 +494,10 @@ name_ = "Chair2"
 [node name="Table" parent="." instance=ExtResource( 6 )]
 position = Vector2( 200, 248 )
 name_ = "Table"
-power = 25
-health = 10
 
 [node name="Book" parent="." instance=ExtResource( 8 )]
 position = Vector2( 864, 208 )
 name_ = "Book"
-power = 20
-health = 10
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 672, 248 )
