@@ -40,28 +40,32 @@ func _process(delta):
 	ProgressBarGreen.value = TimerRock.get_time_left()
 	ProgressBarRed.value = TimerEnd.get_time_left()
 	
+	# If furnace is not on fire
 	if not Engine.getFire():
 		_cry()
 	
 	# If player interact with baby when anim not playing
 	if _body != null and not AnimatedSprite.is_playing() and Input.is_action_just_pressed("ui_accept"):
 		
-		# Play roock sound and anim
+		# Play rock sound and anim
 		AnimatedSprite.play()
 		AudioRock.play()
 		
-		# Stop cry sound timer
-		TimerCry.stop()
-		
-		# Stop end timer
-		ProgressBarRed.visible = false
-		TimerEnd.set_wait_time(EndTime)
-		TimerEnd.stop()
-		
-		# Start rock timer
-		ProgressBarGreen.visible = true
-		TimerRock.set_wait_time(RockTimeAdd)
-		TimerRock.start()
+		# If furnace is on fire
+		if Engine.getFire():
+			
+			# Stop cry sound timer
+			TimerCry.stop()
+			
+			# Stop end timer
+			ProgressBarRed.visible = false
+			TimerEnd.set_wait_time(EndTime)
+			TimerEnd.stop()
+			
+			# Start rock timer
+			ProgressBarGreen.visible = true
+			TimerRock.set_wait_time(RockTimeAdd)
+			TimerRock.start()
 
 
 func _cry():

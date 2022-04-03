@@ -24,8 +24,8 @@ animations = [ {
 
 [node name="Tree" instance=ExtResource( 1 )]
 name_ = "Tree"
-power = 40
-health = 20
+power = 15
+health = 10
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 0, -4 )

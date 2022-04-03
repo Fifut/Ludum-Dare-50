@@ -395,6 +395,7 @@ name_ = "Door"
 
 [node name="Baby" parent="." instance=ExtResource( 9 )]
 position = Vector2( 560, 248 )
+RockTimeAdd = 40
 
 [node name="Furnace" parent="." instance=ExtResource( 4 )]
 position = Vector2( 760, 288 )
@@ -481,23 +482,495 @@ collision_layer = 1
 position = Vector2( 5992, 208 )
 collision_layer = 1
 
+[node name="Sand" type="Node2D" parent="."]
+
+[node name="Sand1" type="ColorRect" parent="Sand"]
+margin_left = 1344.0
+margin_top = 288.0
+margin_right = 1360.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand2" type="ColorRect" parent="Sand"]
+margin_left = 1384.0
+margin_top = 288.0
+margin_right = 1400.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand3" type="ColorRect" parent="Sand"]
+margin_left = 1456.0
+margin_top = 288.0
+margin_right = 1472.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand63" type="ColorRect" parent="Sand"]
+margin_left = 1112.0
+margin_top = 288.0
+margin_right = 1128.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand64" type="ColorRect" parent="Sand"]
+margin_left = 1152.0
+margin_top = 288.0
+margin_right = 1168.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand65" type="ColorRect" parent="Sand"]
+margin_left = 1224.0
+margin_top = 288.0
+margin_right = 1240.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand4" type="ColorRect" parent="Sand"]
+margin_left = 1536.0
+margin_top = 288.0
+margin_right = 1552.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand5" type="ColorRect" parent="Sand"]
+margin_left = 1600.0
+margin_top = 288.0
+margin_right = 1616.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand6" type="ColorRect" parent="Sand"]
+margin_left = 1744.0
+margin_top = 288.0
+margin_right = 1760.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand7" type="ColorRect" parent="Sand"]
+margin_left = 1784.0
+margin_top = 288.0
+margin_right = 1800.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand8" type="ColorRect" parent="Sand"]
+margin_left = 1872.0
+margin_top = 288.0
+margin_right = 1888.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand9" type="ColorRect" parent="Sand"]
+margin_left = 1912.0
+margin_top = 288.0
+margin_right = 1928.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand10" type="ColorRect" parent="Sand"]
+margin_left = 1984.0
+margin_top = 288.0
+margin_right = 2000.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand11" type="ColorRect" parent="Sand"]
+margin_left = 2064.0
+margin_top = 288.0
+margin_right = 2080.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand12" type="ColorRect" parent="Sand"]
+margin_left = 2128.0
+margin_top = 288.0
+margin_right = 2144.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand13" type="ColorRect" parent="Sand"]
+margin_left = 2272.0
+margin_top = 288.0
+margin_right = 2288.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand14" type="ColorRect" parent="Sand"]
+margin_left = 2312.0
+margin_top = 288.0
+margin_right = 2328.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand15" type="ColorRect" parent="Sand"]
+margin_left = 2392.0
+margin_top = 288.0
+margin_right = 2408.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand16" type="ColorRect" parent="Sand"]
+margin_left = 2432.0
+margin_top = 288.0
+margin_right = 2448.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand17" type="ColorRect" parent="Sand"]
+margin_left = 2504.0
+margin_top = 288.0
+margin_right = 2520.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand18" type="ColorRect" parent="Sand"]
+margin_left = 2584.0
+margin_top = 288.0
+margin_right = 2600.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand19" type="ColorRect" parent="Sand"]
+margin_left = 2648.0
+margin_top = 288.0
+margin_right = 2664.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand20" type="ColorRect" parent="Sand"]
+margin_left = 2792.0
+margin_top = 288.0
+margin_right = 2808.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand21" type="ColorRect" parent="Sand"]
+margin_left = 2832.0
+margin_top = 288.0
+margin_right = 2848.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand22" type="ColorRect" parent="Sand"]
+margin_left = 2920.0
+margin_top = 288.0
+margin_right = 2936.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand23" type="ColorRect" parent="Sand"]
+margin_left = 2960.0
+margin_top = 288.0
+margin_right = 2976.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand24" type="ColorRect" parent="Sand"]
+margin_left = 3032.0
+margin_top = 288.0
+margin_right = 3048.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand25" type="ColorRect" parent="Sand"]
+margin_left = 3112.0
+margin_top = 288.0
+margin_right = 3128.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand26" type="ColorRect" parent="Sand"]
+margin_left = 3176.0
+margin_top = 288.0
+margin_right = 3192.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand27" type="ColorRect" parent="Sand"]
+margin_left = 3320.0
+margin_top = 288.0
+margin_right = 3336.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand28" type="ColorRect" parent="Sand"]
+margin_left = 3360.0
+margin_top = 288.0
+margin_right = 3376.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand29" type="ColorRect" parent="Sand"]
+margin_left = 3496.0
+margin_top = 288.0
+margin_right = 3512.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand30" type="ColorRect" parent="Sand"]
+margin_left = 3536.0
+margin_top = 288.0
+margin_right = 3552.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand31" type="ColorRect" parent="Sand"]
+margin_left = 3608.0
+margin_top = 288.0
+margin_right = 3624.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand32" type="ColorRect" parent="Sand"]
+margin_left = 3688.0
+margin_top = 288.0
+margin_right = 3704.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand33" type="ColorRect" parent="Sand"]
+margin_left = 3752.0
+margin_top = 288.0
+margin_right = 3768.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand34" type="ColorRect" parent="Sand"]
+margin_left = 3896.0
+margin_top = 288.0
+margin_right = 3912.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand35" type="ColorRect" parent="Sand"]
+margin_left = 3936.0
+margin_top = 288.0
+margin_right = 3952.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand36" type="ColorRect" parent="Sand"]
+margin_left = 4024.0
+margin_top = 288.0
+margin_right = 4040.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand37" type="ColorRect" parent="Sand"]
+margin_left = 4064.0
+margin_top = 288.0
+margin_right = 4080.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand38" type="ColorRect" parent="Sand"]
+margin_left = 4136.0
+margin_top = 288.0
+margin_right = 4152.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand39" type="ColorRect" parent="Sand"]
+margin_left = 4216.0
+margin_top = 288.0
+margin_right = 4232.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand40" type="ColorRect" parent="Sand"]
+margin_left = 4280.0
+margin_top = 288.0
+margin_right = 4296.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand41" type="ColorRect" parent="Sand"]
+margin_left = 4424.0
+margin_top = 288.0
+margin_right = 4440.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand42" type="ColorRect" parent="Sand"]
+margin_left = 4464.0
+margin_top = 288.0
+margin_right = 4480.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand43" type="ColorRect" parent="Sand"]
+margin_left = 4544.0
+margin_top = 288.0
+margin_right = 4560.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand44" type="ColorRect" parent="Sand"]
+margin_left = 4584.0
+margin_top = 288.0
+margin_right = 4600.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand45" type="ColorRect" parent="Sand"]
+margin_left = 4656.0
+margin_top = 288.0
+margin_right = 4672.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand46" type="ColorRect" parent="Sand"]
+margin_left = 4736.0
+margin_top = 288.0
+margin_right = 4752.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand47" type="ColorRect" parent="Sand"]
+margin_left = 4800.0
+margin_top = 288.0
+margin_right = 4816.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand48" type="ColorRect" parent="Sand"]
+margin_left = 4944.0
+margin_top = 288.0
+margin_right = 4960.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand49" type="ColorRect" parent="Sand"]
+margin_left = 4984.0
+margin_top = 288.0
+margin_right = 5000.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand50" type="ColorRect" parent="Sand"]
+margin_left = 5072.0
+margin_top = 288.0
+margin_right = 5088.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand51" type="ColorRect" parent="Sand"]
+margin_left = 5112.0
+margin_top = 288.0
+margin_right = 5128.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand52" type="ColorRect" parent="Sand"]
+margin_left = 5184.0
+margin_top = 288.0
+margin_right = 5200.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand53" type="ColorRect" parent="Sand"]
+margin_left = 5264.0
+margin_top = 288.0
+margin_right = 5280.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand54" type="ColorRect" parent="Sand"]
+margin_left = 5328.0
+margin_top = 288.0
+margin_right = 5344.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand55" type="ColorRect" parent="Sand"]
+margin_left = 5472.0
+margin_top = 288.0
+margin_right = 5488.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand56" type="ColorRect" parent="Sand"]
+margin_left = 5512.0
+margin_top = 288.0
+margin_right = 5528.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand57" type="ColorRect" parent="Sand"]
+margin_left = 5632.0
+margin_top = 288.0
+margin_right = 5648.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand58" type="ColorRect" parent="Sand"]
+margin_left = 5704.0
+margin_top = 288.0
+margin_right = 5720.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand59" type="ColorRect" parent="Sand"]
+margin_left = 5784.0
+margin_top = 288.0
+margin_right = 5800.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand60" type="ColorRect" parent="Sand"]
+margin_left = 5848.0
+margin_top = 288.0
+margin_right = 5864.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand61" type="ColorRect" parent="Sand"]
+margin_left = 5992.0
+margin_top = 288.0
+margin_right = 6008.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
+[node name="Sand62" type="ColorRect" parent="Sand"]
+margin_left = 6032.0
+margin_top = 288.0
+margin_right = 6048.0
+margin_bottom = 304.0
+color = Color( 0.486275, 0.486275, 0.486275, 1 )
+
 [node name="Chaire1" parent="." instance=ExtResource( 7 )]
 position = Vector2( 320, 248 )
 collision_layer = 1
-name_ = "Chair1"
+name_ = "Chair"
+power = 5
+health = 3
 
 [node name="Chaire2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 88, 248 )
+scale = Vector2( -1, 1 )
 collision_layer = 1
-name_ = "Chair2"
+name_ = "Chair"
+power = 5
+health = 3
 
 [node name="Table" parent="." instance=ExtResource( 6 )]
 position = Vector2( 200, 248 )
 name_ = "Table"
+power = 10
+health = 6
 
-[node name="Book" parent="." instance=ExtResource( 8 )]
+[node name="Book1" parent="." instance=ExtResource( 8 )]
 position = Vector2( 864, 208 )
 name_ = "Book"
+power = 8
+health = 6
+
+[node name="Book2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 432, 208 )
+name_ = "Book"
+power = 8
+health = 6
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 672, 248 )
