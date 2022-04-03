@@ -14,7 +14,7 @@ var _fire_status:= true
 
 func _ready():
 	Score.visible = false
-	
+		
 	# Connect self to start and end game signals
 	connect("start_game", self, "_startGame" )
 	connect("end_game", self, "_endGame" )
@@ -38,6 +38,7 @@ func getScore():
 
 func _startGame():
 	_score = 0
+	_fire_status = true
 	Score.visible = true
 	$TimerScore.start()
 

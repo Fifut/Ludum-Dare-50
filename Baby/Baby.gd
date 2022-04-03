@@ -23,6 +23,9 @@ func _ready():
 	TimerRock.set_wait_time(RockTimeAdd)
 	TimerRock.start()
 	
+	TimerEnd.set_wait_time(EndTime)
+	TimerEnd.stop()
+	
 	# Display and hide progress bars
 	ProgressBarGreen.visible = true
 	ProgressBarGreen.max_value = RockTimeAdd
