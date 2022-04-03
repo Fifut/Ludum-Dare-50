@@ -1,27 +1,27 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Sprite/Baby.png" type="Texture" id=1]
-[ext_resource path="res://baby.wav" type="AudioStream" id=2]
-[ext_resource path="res://Baby.gd" type="Script" id=4]
-[ext_resource path="res://baby2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Baby/Baby.gd" type="Script" id=1]
+[ext_resource path="res://Baby/baby2.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sprite/Baby.png" type="Texture" id=3]
+[ext_resource path="res://Baby/baby.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40, 36 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 3 )
 region = Rect2( 8, 0, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 3 )
 region = Rect2( 24, 0, 8, 8 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 3 )
 region = Rect2( 16, 0, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=6]
@@ -62,7 +62,7 @@ tracks/0/keys = {
 }
 
 [node name="Baby" type="Area2D"]
-script = ExtResource( 4 )
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -4 )
@@ -75,10 +75,10 @@ scale = Vector2( 10, 10 )
 frames = SubResource( 6 )
 
 [node name="AudioCry" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 4 )
 
 [node name="AudioRock" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 2 )
 
 [node name="TimerCry" type="Timer" parent="."]
 wait_time = 2.0

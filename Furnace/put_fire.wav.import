@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/baby.wav-8921fc62bce0a7ebe6ba83b1c3a7d141.sample"
+path="res://.import/put_fire.wav-44755067cd64be41012cc56e5db56559.sample"
 
 [deps]
 
-source_file="res://baby.wav"
-dest_files=[ "res://.import/baby.wav-8921fc62bce0a7ebe6ba83b1c3a7d141.sample" ]
+source_file="res://Furnace/put_fire.wav"
+dest_files=[ "res://.import/put_fire.wav-44755067cd64be41012cc56e5db56559.sample" ]
 
 [params]
 

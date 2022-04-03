@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/baby2.wav-640e9107f8647b76c88621176be7d27f.sample"
+path="res://.import/baby.wav-3e36ad7bd7fc73f0fe5da1fe2e0b74fe.sample"
 
 [deps]
 
-source_file="res://baby2.wav"
-dest_files=[ "res://.import/baby2.wav-640e9107f8647b76c88621176be7d27f.sample" ]
+source_file="res://Baby/baby.wav"
+dest_files=[ "res://.import/baby.wav-3e36ad7bd7fc73f0fe5da1fe2e0b74fe.sample" ]
 
 [params]
 
