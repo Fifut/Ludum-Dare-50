@@ -33,7 +33,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow26" type="CPUParticles2D" parent="Snow"]
 position = Vector2( -344, -232 )
@@ -41,7 +44,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow2" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 1152, -280 )
@@ -49,7 +55,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow3" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 1408, -280 )
@@ -57,7 +66,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow4" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 1600, -280 )
@@ -65,7 +77,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow27" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 456, -344 )
@@ -73,7 +88,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow28" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 712, -344 )
@@ -81,7 +99,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow30" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 56, -352 )
@@ -89,7 +110,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow31" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 296, -352 )
@@ -97,7 +121,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow29" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 904, -344 )
@@ -105,7 +132,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow5" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 1856, -280 )
@@ -113,7 +143,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow6" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 2048, -280 )
@@ -121,7 +154,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow7" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 2248, -272 )
@@ -129,7 +165,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow8" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 2504, -272 )
@@ -137,7 +176,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow9" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 2696, -272 )
@@ -145,7 +187,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow10" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 2952, -272 )
@@ -153,7 +198,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow11" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 3144, -272 )
@@ -161,7 +209,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow12" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 3344, -272 )
@@ -169,7 +220,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow13" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 3600, -272 )
@@ -177,7 +231,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow14" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 3792, -272 )
@@ -185,7 +242,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow15" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 4048, -272 )
@@ -193,7 +253,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow16" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 4240, -272 )
@@ -201,7 +264,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow17" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 4440, -264 )
@@ -209,7 +275,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow18" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 4696, -264 )
@@ -217,7 +286,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow19" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 4888, -264 )
@@ -225,7 +297,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow20" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 5144, -264 )
@@ -233,7 +308,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow21" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 5336, -264 )
@@ -241,7 +319,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow22" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 5544, -272 )
@@ -249,7 +330,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow23" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 5736, -272 )
@@ -257,7 +341,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow24" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 5992, -272 )
@@ -265,7 +352,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Snow25" type="CPUParticles2D" parent="Snow"]
 position = Vector2( 6184, -272 )
@@ -273,7 +363,10 @@ amount = 100
 lifetime = 15.0
 emission_shape = 1
 emission_sphere_radius = 100.0
-gravity = Vector2( 0, 5 )
+direction = Vector2( 0, 1 )
+spread = 0.0
+gravity = Vector2( 0, 10 )
+initial_velocity = 50.0
 
 [node name="Outside" type="StaticBody2D" parent="."]
 collision_layer = 16

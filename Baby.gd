@@ -1,7 +1,7 @@
 extends Area2D
 
 
-onready var TimerSound 			= $TimerSound
+onready var TimerCry 			= $TimerCry
 onready var TimerRock 			= $TimerRock
 onready var TimerEnd			= $TimerEnd
 onready var AudioCry 			= $AudioCry
@@ -9,6 +9,7 @@ onready var AudioRock 			= $AudioRock
 onready var AnimatedSprite 		= $AnimatedSprite
 onready var ProgressBarGreen 	= $ProgressBarGreen
 onready var ProgressBarRed	 	= $ProgressBarRed
+onready var AnimationPlayer	 	= $AnimationPlayer
 
 
 export var RockTimeAdd	:= 20
@@ -19,6 +20,7 @@ var _body = null
 
 
 func _ready():
+	TimerRock.set_wait_time(RockTimeAdd)
 	TimerRock.start()
 	
 	# Display and hide progress bars
@@ -35,6 +37,9 @@ func _process(delta):
 	ProgressBarGreen.value = TimerRock.get_time_left()
 	ProgressBarRed.value = TimerEnd.get_time_left()
 	
+	if not Engine.getFire():
+		_cry()
+	
 	# If player interact with baby when anim not playing
 	if _body != null and not AnimatedSprite.is_playing() and Input.is_action_just_pressed("ui_accept"):
 		
@@ -43,7 +48,7 @@ func _process(delta):
 		AudioRock.play()
 		
 		# Stop cry sound timer
-		TimerSound.stop()
+		TimerCry.stop()
 		
 		# Stop end timer
 		ProgressBarRed.visible = false
@@ -54,6 +59,17 @@ func _process(delta):
 		ProgressBarGreen.visible = true
 		TimerRock.set_wait_time(RockTimeAdd)
 		TimerRock.start()
+
+
+func _cry():
+	if TimerCry.is_stopped():
+		AudioCry.play()
+		AnimationPlayer.play("Cry")
+		TimerCry.start()
+			
+		ProgressBarGreen.visible = false
+		ProgressBarRed.visible = true
+		TimerEnd.start()
 
 
 func _on_Baby_body_entered(body):
@@ -70,15 +86,11 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_TimerSound_timeout():
 	AudioCry.play()
+	AnimationPlayer.play("Cry")
 
 
 func _on_TimerRock_timeout():
-	AudioCry.play()
-	TimerSound.start()
-		
-	ProgressBarGreen.visible = false
-	ProgressBarRed.visible = true
-	TimerEnd.start()
+	_cry()
 
 
 func _on_TimerEnd_timeout():

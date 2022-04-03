@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sprite/Baby.png" type="Texture" id=1]
 [ext_resource path="res://baby.wav" type="AudioStream" id=2]
@@ -44,6 +44,23 @@ bg_color = Color( 0.74902, 0, 0, 1 )
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.431373, 0, 0, 1 )
 
+[sub_resource type="Animation" id=13]
+resource_name = "Cry"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10, 10 ), Vector2( 12, 12 ), Vector2( 10, 10 ) ]
+}
+
 [node name="Baby" type="Area2D"]
 script = ExtResource( 4 )
 
@@ -63,7 +80,7 @@ stream = ExtResource( 2 )
 [node name="AudioRock" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
-[node name="TimerSound" type="Timer" parent="."]
+[node name="TimerCry" type="Timer" parent="."]
 wait_time = 2.0
 
 [node name="TimerRock" type="Timer" parent="."]
@@ -92,9 +109,12 @@ custom_styles/bg = SubResource( 10 )
 step = 1.0
 percent_visible = false
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Cry = SubResource( 13 )
+
 [connection signal="body_entered" from="." to="." method="_on_Baby_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Baby_body_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
-[connection signal="timeout" from="TimerSound" to="." method="_on_TimerSound_timeout"]
+[connection signal="timeout" from="TimerCry" to="." method="_on_TimerSound_timeout"]
 [connection signal="timeout" from="TimerRock" to="." method="_on_TimerRock_timeout"]
 [connection signal="timeout" from="TimerEnd" to="." method="_on_TimerEnd_timeout"]

@@ -9,6 +9,7 @@ onready var Score = $CanvasLayer/Control/VBoxContainer/Score
 
 
 var _score:= 0
+var _fire_status:= true
 
 
 func _ready():
@@ -21,6 +22,14 @@ func _ready():
 
 func _process(delta):
 	Score.text = "Score  " + str(_score)
+
+
+func setFire(status: bool):
+	_fire_status = status
+
+
+func getFire():
+	return _fire_status
 
 
 func getScore():

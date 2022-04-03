@@ -8,26 +8,20 @@ export var speed: = Vector2(200.0, 200.0)
 export var gravity: = 1000.0
 
 
-
-# Variable privée
 var _velocity: = Vector2.ZERO
 var _item: = "none"
 var _power: = 0
 
 
-func _process(delta):
-	pass
-
-
 func _physics_process(delta: float) -> void:
 	
-	# Applique la gravité
+	# Gravity
 	_velocity.y += gravity * delta
 	
 	# Regarde si on arrête le saut
 	var is_jump_interrupted: = Input.is_action_just_released("ui_up") and _velocity.y < 0.0
 	
-	# Récupère la direction demandé par le joueur
+	# Get player direction
 	var direction: = get_direction()
 	
 	if direction.x < 0:
@@ -42,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		$AnimatedSprite.play("stand")
 	
-	# Calcul la nouvelle vitesse
+	# Compute velocity
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 	
@@ -96,12 +90,10 @@ func isEmpty() -> bool:
 
 func setItem(item: String, power: int) -> bool:
 	if _item == "none":
-		print("Player : item received " + item)
 		_item = item
 		_power = power
 		return true
 	else:
-		print("Player : can not received " + item)
 		return false
 
 

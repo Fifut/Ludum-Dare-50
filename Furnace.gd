@@ -31,6 +31,9 @@ func _process(delta):
 		# If items name is not null
 		if item[0] != "none":
 			
+			# Update engine
+			Engine.setFire(true)
+			
 			# Add time to fire
 			var time = Timer.get_time_left()
 			time += item[1]
@@ -56,5 +59,6 @@ func _on_body_exited(body):
 
 # Fire stop
 func _on_Timer_timeout():
+	Engine.setFire(false)
 	AudioFire.stop()
 	AnimationPlayer.set_current_animation("Stop")
