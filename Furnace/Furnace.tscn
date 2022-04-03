@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Furnace/Furnace.gd" type="Script" id=1]
-[ext_resource path="res://Furnace/fire.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Furnace/fire.wav" type="AudioStream" id=2]
 [ext_resource path="res://Furnace/put_fire.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -111,6 +111,7 @@ autostart = true
 
 [node name="AudioFire" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+max_distance = 500.0
 
 [node name="AudioPut" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
